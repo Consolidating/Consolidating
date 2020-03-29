@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+        <style>
+            .row {
+                margin-top: 25vh;
+            }
+            
+            #message-header{
+                margin-top: 0;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <div class="row">
+            <div class="col s8 offset-s2">
+
+                
+
+                <div class="card-panel" id="message-form">
+                    
+                  <form>
+                    <label>Enter a Message <i class="far fa-envelope"></i>
+                     </label>
+                    <input id="message-input" />
+                    <button id="create-link-btn" class="waves-effect btn black lighten">Create</button>
+
+                    <button class="btn modal-trigger black" data-target="HelpModal"> Help <i class="fas fa-question-circle"></i> </button>
+                  </form>
+                </div>
+
+
+
+                
+
+                <div id="message-show" class="card-panel hide">
+                    <label id="message-header"> Message: <i class="far fa-envelope-open"></i> </label>
+                    <p id="content"></p>
+                    <div>
+                        <a class="btn black" href="./Index.html"> Create Your Own Secret Message </a>
+                    </div>
+                </div>
+
+                <div class="card-panel hide" id="link-form">
+                    <div>
+                        Share this link with a friend!
+                        <input id="link-input"/>
+                        <a class="btn tooltipped modal-trigger black lighten" id="copy-clipboard-btn" data-position="bottom" data-delay="50" data-tooltip="Copies link to Clipboard!" data-target="confirmationModal"> Copy to Clipboard <i class="far fa-clipboard"></i> </a>
+                    </div>
+                </div>
+
+             
+
+            </div>
+        </div>
+
+
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+              <p>Copied Link to Clipboard!</p>
+
+              <button class="btn tooltipped black lighten" data-position="bottom"  data-delay="50" id="open-link-btn"  data-tooltip="Opens Generated Link in New tab"> Open Secret Message Link</button> 
+        
+              <a href="./Index.html" class="btn tooltipped black lighten" id="new-message-btn" data-position="bottom" data-delay="50" data-tooltip="Go Back"> Create Another Message</a>
+            </div>
+        </div>
+
+
+
+            <div id="HelpModal" class="modal">
+                <div class="modal-content">
+                <h5> Instructions </h5>
+                    <p> Type in a Secret Message (Max 60 Characters) and click Create. <br> 
+                        This will generate a link which can be sent to a friend with the message displayed. <br>
+                        Uses base64 encoding to transmit message via URL 
+                    </p>
+                </div>
+            </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+
+</html>
